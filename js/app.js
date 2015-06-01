@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$http,$rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -17,6 +17,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+
+      $http.get('/js/data.js').
+  success(function(data, status, headers, config) {
+        var d = JSON.stringify(data);
+        var a = JSON.parse(d);
+        $rootScope.data = a;
+  });
+
   });
 })
 
@@ -44,7 +53,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/categories",
     views: {
       'menuContent': {
-        templateUrl: "templates/categories.html"
+        templateUrl: "templates/categories.html",
+          controller : "CategoryListController"
       }
     }
   })
@@ -68,15 +78,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-  .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+//  .state('app.single', {
+//    url: "/playlists/:playlistId",
+//    views: {
+//      'menuContent': {
+//        templateUrl: "templates/playlist.html",
+//        controller: 'PlaylistCtrl'
+//      }
+//    }
+//  });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/start');
 });

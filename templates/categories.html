@@ -1,7 +1,54 @@
 <ion-view view-title="Categories">
-    <ion-content>
+    <ion-content >
+
+<!--
+            <div ng-repeat="model in categories">
+                <div class="row" ng-show="$index % 3 == 1">
+
+            <a class="col col-33" style="text-align:center; text-decoration:none; color:black;" href="#/app/search/{{model.id}}">
+                <p class="button button-icon icon ion-settings"></p>
+                <p>{{model.name}}</p>
+            </a>
+
+
+
+                    </div>
+-->
+        <div class="list" >
+
+  <a class="item item-icon-left" ng-repeat="model in categories" href="#/app/search/{{model.id}}">
+    <i class="icon ion-settings"></i>
+    {{model.name}}
+  </a>
+
+        </div>
+
+<!--
+        <div ng-repeat="model in categories track by $index" ng-if="$index % 3==0" class="row">
+
+  <a class="col col-33" style="text-align:center; text-decoration:none; color:black;" href="#/app/search/{{model[$index].id}}">
+                <p class="button button-icon icon ion-settings"></p>
+                <p>{{model[$index].name}}</p>
+            </a>
+  <a class="col col-33" style="text-align:center; text-decoration:none; color:black;" href="#/app/search/{{model[$index+1].id}}">
+                <p class="button button-icon icon ion-settings"></p>
+                <p>{{model[$index+1].name}}</p>
+            </a>
+  <a class="col col-33" style="text-align:center; text-decoration:none; color:black;" href="#/app/search/{{model[$index+2].id}}">
+                <p class="button button-icon icon ion-settings"></p>
+                <p>{{model[$index+2].name}}</p>
+            </a>
+
+</div>
+
+-->
+
+<!--
+
+
+
         <div class="row">
-<!--            <a class="col col-33" style="text-align:center; text-decoration:none; color:black;" href="#/app/search/{{playlist.id}}">-->
+            <a class="col col-33" style="text-align:center; text-decoration:none; color:black;" href="#/app/search/{{playlist.id}}">
             <a class="col col-33" style="text-align:center; text-decoration:none; color:black;" href="#/app/search/1">
                 <p class="button button-icon icon ion-settings"></p>
                 <p>caffe</p>
@@ -36,5 +83,6 @@
                 <p>hotels</p>
             </a>
         </div>
+-->
     </ion-content>
 </ion-view>
