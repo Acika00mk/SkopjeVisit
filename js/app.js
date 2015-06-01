@@ -31,10 +31,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
   .state('app.search', {
-    url: "/search",
+    url: "/search/:catId",
     views: {
       'menuContent': {
-        templateUrl: "templates/search.html"
+        templateUrl: "templates/search.html",
+          controller : "CategoryController"
       }
     }
   })
@@ -49,10 +50,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
   .state('app.profile', {
-    url: "/profile",
+    url: "/profile/:profileId",
     views: {
       'menuContent': {
-        templateUrl: "templates/profile.html"
+        templateUrl: "templates/profile.html",
+          controller : "ProfileController"
       }
     }
   })

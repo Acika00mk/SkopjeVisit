@@ -46,4 +46,13 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
     console.log($stateParams.playlistId);
-});
+})
+
+.controller('CategoryController',function($scope,$stateParams){
+    console.log($stateParams.catId);
+})
+
+.controller('ProfileController',function($scope,$stateParams){
+    console.log($stateParams.profileId);
+})
+
